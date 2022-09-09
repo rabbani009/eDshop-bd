@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\SliderController;
 
 
 use App\Http\Controllers\Frontend\LanguageController;
+use App\Http\Controllers\Frontend\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -182,6 +183,9 @@ Route::get('/product/details/{id}/{slug}', [IndexController::class, 'ProductDeta
 // Product View Modal with Ajax
 Route::get('/product/view/modal/{id}', [IndexController::class, 'ProductViewAjax']);
 
+// Add to Cart Store Data
+
+Route::post('/cart/data/store/{id}', [CartController::class, 'AddToCart']);
 
 
 
