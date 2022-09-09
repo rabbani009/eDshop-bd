@@ -230,15 +230,29 @@
             } // end prodcut price 
 
 
+                  // Start Stock opiton
+
+            if (data.product.product_qty > 0) {
+                $('#aviable').text('');
+                $('#stockout').text('');
+                $('#aviable').text('aviable');
+
+            }else{
+                $('#aviable').text('');
+                $('#stockout').text('');
+                $('#stockout').text('stockout');
+            } // end Stock Option 
 
 
-            // Color
+
+
+                 // Color
             $('select[name="color"]').empty();        
                $.each(data.color,function(key,value){
                   $('select[name="color"]').append('<option value=" '+value+' ">'+value+' </option>')
                }) // end color
 
-               // Size
+                   // Size
                $('select[name="size"]').empty();        
                $.each(data.size,function(key,value){
                   $('select[name="size"]').append('<option value=" '+value+' ">'+value+' </option>')
@@ -249,13 +263,6 @@
                   }
 
                }) // end size
-
-
-
-
-
-
-
 
 
 
