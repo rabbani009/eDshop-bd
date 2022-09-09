@@ -129,7 +129,8 @@
                             <label for="inputEmail4">Product Tags En</label>
                         
                             <select class="form-control tagging" name="product_tags_en" multiple="multiple" required="" >
-                                <option>orange</option>
+                                
+                                
                                 
                             </select>
                         </div>

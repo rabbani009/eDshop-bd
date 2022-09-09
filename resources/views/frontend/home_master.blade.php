@@ -122,7 +122,7 @@
          <div class="col-md-4">
  
       <ul class="list-group">
-   <li class="list-group-item">Product Price: <strong class="text-danger"><span id="price"></span></strong>
+   <li class="list-group-item">Product Price:  <strong class="text-danger">$<span id="pprice"></span></strong>
  <del id="oldprice">$</del>
     </li>
    <li class="list-group-item">Product Code: <strong id="pcode"></strong></li>
@@ -214,8 +214,68 @@
             $('#pbrand').text(data.product.brand.brand_name_en);
             $('#pimage').attr('src','/'+data.product.product_thambnail);
 
+
+
+                // Product Price 
+            if (data.product.discount_price == null) {
+                $('#pprice').text('');
+                $('#oldprice').text('');
+                $('#pprice').text(data.product.selling_price);
+
+
+            }else{
+                $('#pprice').text(data.product.discount_price);
+                $('#oldprice').text(data.product.selling_price);
+
+            } // end prodcut price 
+
+
+
+
+            // Color
+            $('select[name="color"]').empty();        
+               $.each(data.color,function(key,value){
+                  $('select[name="color"]').append('<option value=" '+value+' ">'+value+' </option>')
+               }) // end color
+
+               // Size
+               $('select[name="size"]').empty();        
+               $.each(data.size,function(key,value){
+                  $('select[name="size"]').append('<option value=" '+value+' ">'+value+' </option>')
+                  if (data.size == "") {
+                        $('#sizeArea').hide();
+                  }else{
+                        $('#sizeArea').show();
+                  }
+
+               }) // end size
+
+
+
+
+
+
+
+
+
+
         }
     })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
 }
 
